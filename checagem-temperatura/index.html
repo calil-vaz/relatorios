@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checagem de Temperatura | Manutenção</title>
+    <link rel="icon" href="../Images/icon-gp-pereira.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../globall.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="modal">
+        <div style="margin-left: 2rem;" class="logo">           
+                <img style="width: 8rem;     padding-right: .9rem;" src="../Images/icon-gp-pereira-loading.svg"
+                    alt="Logo Grupo Pereira">
+        </div>
+    </div>
+    <main>
+        <div id="content_img">
+            <a onclick="goBack()">
+                <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+            </a>
+            <a onclick="goBack()">
+                <img id="logo-form" src="../Images/logo-gp-pereira.svg" alt="Logo Grupo Pereira">
+            </a>
+            <h3 style="text-align: center;">CHECAGEM DA TEMPERATURA AMBIENTE DA LOJA EM CINCO PONTOS</h3>
+        </div>
+        <form id="form">          
+            <label>DATA DO RELATÓRIO:</label>
+            <input type="date" id="date">
+
+            <div class="cardItem">
+                1º PONTO – SAÍDA DEPÓSITO (PAREDÃO):
+                <input id="primeiroPonto" type="number" placeholder="1° Ponto">
+            </div>
+
+            <div class="cardItem">
+                2º PONTO – BEBIDAS
+                <input id="segundoPonto" type="number" placeholder="2° Ponto">
+            </div>
+
+            <div class="cardItem">
+                3º PONTO – CENTRO DA LOJA
+                <input id="terceiroPonto" type="number" placeholder="3° Ponto">
+            </div>
+        <div class="plus-sign"></div>
+
+            <div class="cardItem">
+                4º PONTO – FRENTE DE CAIXA
+                <input id="quartoPonto" type="number" placeholder="4° Ponto">
+            </div>
+
+            <div class="cardItem">
+                5º PONTO – FLV / PERECÍVEIS
+                <input id="quintoPonto" type="number" placeholder="5° Ponto">
+            </div>
+        </form>
+
+        <div id="contentButton">
+            <button id="generate-pdf" onclick="generatePDF()">Gerar PDF</button>
+            <div>
+                <p>DESENVOLVIDO POR CALIL ASIR VAZ VELOZO</p>
+                <p>PCM SCN</p>
+            </div>
+        </div>
+
+        <div id="content" style="display:none;">
+        </div>
+    </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      { "source": "/checklist-manutencao", "destination": "/checklist-manutencao-main/index.html" },
+      { "source": "/baixa-imobilizados", "destination": "/baixa-imobilizados-main/index.html" },
+      { "source": "/relatorio-de-mau-uso-main", "destination": "/relatorio-de-mau-uso-main/index.html" },
+      { "source": "/checagem-temperatura", "destination": "/checagem-temperatura/index.html" }
+    ]
+}

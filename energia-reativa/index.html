@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energia Reativa | Manutenção</title>
+    <link rel="icon" href="../Images/icon-gp-pereira.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../globall.css">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="modal">
+        <div style="margin-left: 2rem;" class="logo">           
+                <img style="width: 8rem;     padding-right: .9rem;" src="../Images/icon-gp-pereira-loading.svg"
+                    alt="Logo Grupo Pereira">
+        </div>
+    </div>
+
+    <main>
+
+        <div id="content_img">
+            <a onclick="goBack()">
+                <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+            </a>
+            <a onclick="goBack()">
+                <img id="logo-form" src="../Images/logo-gp-pereira.svg" alt="Logo Grupo Pereira">
+            </a>
+            <h2 style="text-align: center;">ENERGIA REATIVA</h2>
+        </div>
+        <form id="form">
+            <label for="date">DATA DO RELATÓRIO:</label>
+            <input type="date" id="date">
+
+            <h4>Procedimentos a serem realizados:
+                <br>
+                <br>
+                    1. Reset automático
+                <br>
+                    2. Verificação das conexões, aperto dos bornes e dos contatores das células capacitivas
+                <br>
+                    3. Limpeza do QD 
+                <br>
+                    4. Inspeção das células capacitivas</h4>
+            <h4>MANUTENÇÃO PREVENTIVA MENSAL DE BANCO DE CAPACITORES</h4>
+
+            <div class="cardItem">
+                1. FOI REALIZADO RESET AUTOMÁTICO? -
+                <select name="data-item" id="item1" class="item">
+                    <option value="">Selecione a resposta</option>
+                    <option value="SIM">SIM</option>
+                    <option value="NÃO">NÃO</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                2. FOI REALIZADA A VERIFICAÇÃO NAS CONEXÕES, APERTO DOS BORNES E DOS CONTATORES DAS CÉLULAS CAPACITIVAS? -
+                <select name="data-item" id="item2" class="item">
+                    <option value="">Selecione a resposta</option>
+                    <option value="SIM">SIM</option>
+                    <option value="NÃO">NÃO</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                3. FOI REALIZADA A LIMPEZA NO QD? -
+                <select name="data-item" id="item3" class="item">
+                    <option value="">Selecione a resposta</option>
+                    <option value="SIM">SIM</option>
+                    <option value="NÃO">NÃO</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                4. SERÁ NECESSÁRIO A TROCA DE CÉLULA CAPACITIVA? -
+                <select name="data-item" id="item4" class="item">
+                    <option value="">Selecione a resposta</option>
+                    <option value="SIM">SIM</option>
+                    <option value="NÃO">NÃO</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                5. SERÁ NECESSÁRIO MANUTENÇÃO CORRETIVA? -
+                <select name="data-item" id="item5" class="item">
+                    <option value="">Selecione a resposta</option>
+                    <option value="SIM">SIM</option>
+                    <option value="NÃO">NÃO</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <h4>5. ANEXOS</h4>
+
+            <label for="imageInput1" class="custom-file-upload">
+                ADICIONE UMA IMAGEM DO SETPOINT CONFIGURADO NO QUADRO 
+            </label>
+            <input type="file" id="imageInput1" accept="image/*">
+
+            <label for="imageInput2" class="custom-file-upload">
+                ADICIONE UMA IMAGEM DAS CÉLULAS CAPACITIVAS
+            </label>
+            <input type="file" id="imageInput2" accept="image/*">
+        </form>
+
+        <div id="contentButton">
+            <button id="generate-pdf" onclick="generatePDF()">Gerar PDF</button>
+            <div>
+                <p>DESENVOLVIDO POR CALIL ASIR VAZ VELOZO</p>
+                <p>PCM SCN</p>
+            </div>
+        </div>
+
+        <div id="content" style="display:none; width: 700px;">
+
+            <table id="anexos">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">5.ANEXOS</th>
+                    </tr>
+                </thead>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align: center; width: 50%;">
+                            IMAGEM DO SETPOINT CONFIGURADO NO QUADRO
+                        </th>
+                        <th>IMAGEM DAS CÉLULAS CAPACITIVAS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td id="image1" style="height: 320px;">
+                            <img id="selectedImage" src="" alt="Imagem Selecionada"
+                                style="width: 100%; max-width: 600px;">
+                        </td>
+                        <td id="image2">
+
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./scripts.js"></script>
+</body>
+</html>

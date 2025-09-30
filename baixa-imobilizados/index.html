@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baixa de Imobilizados | Manutenção</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../globall.css">
+    <link rel="icon" href="../Images/icon-gp-pereira.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="modal">
+        <div style="margin-left: 2rem;" class="logo">
+            <img style="width: 8rem;     padding-right: .9rem;" src="../Images/icon-gp-pereira-loading.svg"
+                alt="Logo Grupo Pereira">
+        </div>
+    </div>
+
+    <main>
+
+        <div id="content_img">
+            <a onclick="goBack()">
+                <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+            </a>
+            <a onclick="goBack()">
+                <img id="logo-form" src="../Images/logo-gp-pereira.svg" alt="Logo Grupo Pereira">
+            </a>
+            <h2 style="text-align: center;">BAIXA DE IMOBILIZADOS</h2>
+        </div>
+
+        <form id="form">
+            <label>DATA DO RELATÓRIO:</label>
+            <input type="date" id="date">
+
+            <h4>1. REGISTRO DE ESPECIFICAÇÕES TÉCNICAS</h4>
+
+            <div class="cardItem">
+                ATIVO:
+                <input id="ativo" type="text" placeholder="Nome do ativo">
+            </div>
+
+            <div class="cardItem">
+                MARCA:
+                <input id="marca" type="text" placeholder="Marca do ativo">
+            </div>
+
+            <div class="cardItem">
+                MODELO:
+                <input id="modelo" type="text" placeholder="Modelo do ativo">
+            </div>
+
+            <div class="cardItem">
+                N° DE SÉRIE:
+                <input id="numSerie" type="text" placeholder="N° de série">
+            </div>
+
+            <div class="cardItem">
+                PATRIMÔNIO:
+                <input placeholder="Digite o patrimônio" id="patrimonio" type="number">
+            </div>
+
+            <div class="cardItem">
+                Outros:
+                <input id="outros" type="text" placeholder="(Opcional)">
+            </div>
+            <div class="cardItem">
+                MOTIVO DA BAIXA:
+                <select required name="motivoBaixa" id="motivoBaixa">
+                    <option value="">Selecione o motivo da baixa</option>
+                    <option value="CONSECUTIVAS MANUTENÇÕES DO ATIVO, DEVIDO AO DESGASTE DE USO">CONSECUTIVAS MANUTENÇÕES DO ATIVO, DEVIDO AO DESGASTE DE USO;</option>
+                    <option value="CUSTO DE MANUTENÇÃO ACIMA DE 60% DE UM ATIVO NOVO">CUSTO DE MANUTENÇÃO ACIMA DE 60% DE UM ATIVO NOVO;</option>
+                    <option value="EQUIPAMENTO EM DESUSO, DEVIDO A FALTA DE PEÇAS DESSE MODELO NO MERCADO">EQUIPAMENTO EM DESUSO, DEVIDO A FALTA DE PEÇAS DESSE MODELO NO MERCADO</option>
+                    <option value="FIM DA VIDA UTIL E/OU VALIDADE">FIM DA VIDA UTIL E/OU VALIDADE</option>
+                    <option value="RETROFIT DO SETOR">RETROFIT DO SETOR</option>
+                </select>
+            </div>
+            <h4>2. SITUAÇÃO VISUAL</h4>
+            <div class="cardItem">
+                DESCRIÇÃO DETALHADA DO ESTADO VISUAL DO ATIVO:
+                <textarea name="" id="descricaoVisual" cols="30"></textarea>
+            </div>
+            <h4>3. ESTADO GERAL DO EQUIPAMENTO</h4>
+            <div class="cardItem">
+                DESCREVER A SITUAÇÃO DO FUNCIONAMENTO:
+                <textarea name="" id="situacaoFuncionamento" cols="30"></textarea>
+            </div>
+
+            <div class="cardItem">
+                OBSERVAÇÕES:
+                <small>(Opcional)</small>
+                <textarea name="" id="observacoes" cols="30"></textarea>
+            </div>
+            <div class="cardItem">
+                CONCLUSÃO SE O ATIVO DEVE SER DESCONTINUADO:
+                <textarea name="" id="conclusao" cols="30"></textarea>
+            </div>
+            <h4>4. ANEXOS</h4>
+
+            <label for="imageInput1" class="custom-file-upload">
+                ADICIONE UMA IMAGEM DO EQUIPAMENTO
+            </label>
+            <input type="file" id="imageInput1" accept="image/*">
+
+            <label for="imageInput2" class="custom-file-upload">
+                ADICIONE UMA IMAGEM DA ETIQUETA DO FABRICANTE
+            </label>
+            <input type="file" id="imageInput2" accept="image/*">
+
+            <label for="imageInput3" class="custom-file-upload">
+                ADICIONE UMA IMAGEM DO PATRIMÔNIO
+            </label>
+            <input type="file" id="imageInput3" accept="image/*">
+
+
+            <label for="imageInput4" class="custom-file-upload">
+                ADICIONE UMA IMAGEM DO INCIDENTE
+            </label>
+            <input type="file" id="imageInput4" accept="image/*">
+        </form>
+
+        <div id="contentButton">
+            <button id="generate-pdf" onclick="generatePDF()">Gerar PDF</button>
+            <div>
+                <p>DESENVOLVIDO POR CALIL ASIR VAZ VELOZO</p>
+                <p>PCM SCN</p>
+            </div>
+        </div>
+
+        <div id="content" style="display:none;">
+
+            <table id="anexos">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">4.ANEXOS</th>
+                    </tr>
+                </thead>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align: center; width: 50%;">
+                            IMAGEM DO EQUIPAMENTO
+                        </th>
+                        <th>IMAGEM DA ETIQUETA DO FABRICANTE</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td id="image1" style="height: 419px;">
+                            <img id="selectedImage" src="" alt="Imagem Selecionada"
+                                style="width: 100%; max-width: 600px;">
+                        </td>
+                        <td id="image2">
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="page-break" id="imagesEnd">
+                <thead>
+                    <tr>
+                        <th style="text-align: center; width: 50%;">
+                            IMAGEM DO PATRIMÔNIO
+                        </th>
+                        <th style="text-align: center; width: 50%;">IMAGEM DO INCIDENTE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="image3" style="height: 419px;">
+                        </td>
+                        <td id="image4" style="height: 419px;">
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./scripts.js"></script>
+</body>
+</html>

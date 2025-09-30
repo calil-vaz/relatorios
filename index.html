@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios Manutenção</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="../Images/icon-gp-pereira.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="globall.css">
+</head>
+<body>
+    <div id="content-profile">
+        <img class="logo" src="/Images/logo-gp-pereira.svg" alt="Logo">
+        <div id="containerInputsProfile">
+            <div>
+        <h2 style="margin: 1rem 0;">EDITAR PERFIL</h2>
+    <label for="selectBandeira">BANDEIRA:</label><br>
+    <select required id="selectBandeira">
+        <option value="">Selecione a Bandeira</option>
+        <option value="Fort Atacadista">Fort Atacadista</option>
+        <option value="Sempre Fort">Sempre Fort</option>
+        <option value="Bate Fort">Bate Fort</option>
+        <option value="Comper">Comper</option>
+        <option value="Perlog">Perlog</option>
+        <option value="Fort Atacadista Posto">Fort Atacadista Posto</option>
+        <option value="Trudys">Trudys</option>
+    </select><br>
+
+    <label for="storeProfile">LOJA:</label><br>
+    <input required type="number" id="storeProfile" placeholder="Digite o número da sua loja"><br>
+
+    <label for="nameTechnical">TÉCNICO: <span style="color: red; font-size: small;">(digite seu nome completo)</span></label><br>
+    <input required id="nameTechnical" type="text" placeholder="Digite seu nome completo"><br>
+
+    <label for="matricula">MATRÍCULA:</label><br>
+    <input required id="matricula" type="number" placeholder="Digite sua matrícula"><br>
+
+    <label for="gestor">GESTOR: <span style="color: red; font-size: small;">(nome completo)</span></label><br>
+    <input required id="gestor" type="text" placeholder="Digite o nome do seu gestor"><br>
+
+    <label for="regional">REGIONAL:</label><br>
+    <select required name="regional" id="regional">
+        <option value="">Selecione a Regional</option>
+        <option value="Distrito Federal">Distrito Federal</option>
+        <option value="Goiás">Goiás</option>
+        <option value="Mato Grosso">Mato Grosso</option>
+        <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+        <option value="Santa Catarina">Santa Catarina</option>
+        <option value="São Paulo">São Paulo</option>
+    </select>
+</div>
+
+            <div style="width: 17rem; display: flex; justify-content: space-between;">
+                <button id="save_profile" onclick="saveProfile()">Salvar</button>
+                <button id="close_profile" onclick="closeProfile()">Cancelar</button>
+            </div>
+
+        </div>
+        <footer>
+            <p>DESENVOLVIDO POR CALIL ASIR VAZ VELOZO</p>
+            <p>PCM SCN</p>
+        </footer>
+    </div>
+    <div id="content_img">
+            <img id="logo-form" src="./Images/logo-gp-pereira.svg" alt="Logo Grupo Pereira">
+            <i id="icon-user" class="fa-regular fa-user" onclick="editProfile()"></i>
+    </div>
+    <main>
+        
+            <a onclick="verificarPerfil(event)" href="/checklist-manutencao/">
+                <p>CHECKLIST <br> DIÁRIO</p>
+                <img src="./Images/logo-checklist.jpg" alt="Logo Checklist Diário">
+            </a>
+        
+        <a onclick="verificarPerfil(event)" href="/baixa-imobilizados/">
+            <p>BAIXA DE <br> IMOBILIZADOS</p>
+            <img src="./Images/logo-baixa-imobilizados.jpg" alt="Logo Baixa de Imobilizados">
+        </a>
+        <a onclick="verificarPerfil(event)" href="/relatorio-de-mau-uso/">
+            <p>RELATÓRIO DE <br> MAU USO</p>
+            <img src="./Images/logo-mau-uso.jpg" alt="Logo Relatório de Mau Uso">
+        </a>
+        <a onclick="verificarPerfil(event)" href="/checagem-temperatura/">
+            <p>CHECAGEM DE <br> TEMPERATURA</p>
+            <img src="./Images/logo-checagem-temperatura.jpg" alt="Logo Checagem de Temperatura">
+        </a>
+        <a onclick="verificarPerfil(event)" href="/energia-reativa/">
+            <p>ENERGIA <br> REATIVA</p>
+            <img src="./Images/logo-energia-reativa.png" alt="Logo Checagem de Temperatura">
+        </a>
+    </main>
+    <footer>
+        <p>DESENVOLVIDO POR CALIL ASIR VAZ VELOZO</p>
+        <p>PCM SCN</p>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./utils.js"></script>
+    <script src="./main.js"></script>
+    <script src="https://kit.fontawesome.com/318c0c8c09.js" crossorigin="anonymous"></script>
+</body>
+</html>

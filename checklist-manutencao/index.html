@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Checklist Manutenção</title>
+    <link rel="icon" href="../Images/icon-gp-pereira.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../globall.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div id="modal">
+        <div style="margin-left: 2rem;" class="logo">           
+                <img style="width: 8rem;     padding-right: .9rem;" src="../Images/icon-gp-pereira-loading.svg"
+                    alt="Logo Grupo Pereira">
+        </div>
+    </div>
+
+    <main id="main">
+        <div id="content_img">
+            <a onclick="goBack()">
+                <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+            </a>
+            <a onclick="goBack()">
+                <img id="logo-form" src="../Images/logo-gp-pereira.svg" alt="Logo Grupo Pereira">
+            </a>
+            <h2 style="text-align: center; margin-bottom: 1rem;">CHECKLIST DIÁRIO</h2>
+        </div>
+        <form action="">
+            <label>DATA:</label>
+            <input type="date" id="date">
+
+            <h3>STATUS: "C" CONFORME - "NC" NÃO CONFORME - "NA" NÃO SE APLICA</h3>
+
+            <div class="cardItem">
+                1. SETOR CASA DE MÁQUINAS (COMPRESSORES E RACK) -
+                <select name="data-item" id="item1" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                2. NOBREAK -
+                <select name="data-item" id="item2" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                3. BANCO DE BATERIAS -
+                <select name="data-item" id="item3" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                4. GRUPO GERADOR -
+                <select name="data-item" id="item4" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                5. SUBESTAÇÃOE BANCO DE CAPACITOR -
+                <select name="data-item" id="item5" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                6. ILHAS E EXPOSITORES -
+                <select name="data-item" id="item6" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                7. CÂMARAS FRIAS -
+                <select name="data-item" id="item7" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                8. EMPILHADEIRAS -
+                <select name="data-item" id="item8" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                9. BATERIAS TRACIONÁRIAS -
+                <select name="data-item" id="item9" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                10. CARREGADORES DE BATERIA -
+                <select name="data-item" id="item10" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                11. TRANSPALETEIRAS MANUAL -
+                <select name="data-item" id="item11" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                12. ILUMINAÇÃO -
+                <select name="data-item" id="item12" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                13. AR CENTRAL -
+                <select name="data-item" id="item13" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                14. SISTEMA DE COMBATE A INCÊNDIO -
+                <select name="data-item" id="item14" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+
+            <div class="cardItem">
+                15. SISTEMA DE ÁGUA/ESGOTO -
+                <select name="data-item" id="item15" class="item">
+                    <option value="">Selecione o Status</option>
+                    <option value="C">C</option>
+                    <option value="NC">NC</option>
+                    <option value="NA">NA</option>
+                </select>
+                <input type="text" placeholder="Observações (Opcional)">
+            </div>
+        </form>
+        <div id="contentButton">
+            <button id="generate-pdf" onclick="App()">Gerar PDF</button>
+            <div>
+                <p>DESENVOLVIDO POR CALIL ASIR VAZ VELOZO</p>
+                <p>PCM SCN</p>
+            </div>
+        </div>
+    </main>
+
+
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../utils.js"></script>
+    <script src="./scripts.js"></script>
+</body>
+</html>

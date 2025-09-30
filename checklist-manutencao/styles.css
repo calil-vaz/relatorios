@@ -1,0 +1,48 @@
+#logo-form {
+  width: 10rem;
+}
+
+table {
+  flex-direction: column;
+  width: 110%;
+}
+
+tr td p {
+  margin: 0;
+}
+
+#contentImgPDF {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+div#content div {
+  display: flex;
+  width: 110%;
+}
+
+.textPDF {
+  width: 50vw;
+  font-weight: bold;
+  font-size: medium;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+div#content div p {
+  width: 65%;
+} 
+
+.invalid {
+  border: 2px solid red;
+}
+
+.setor {
+  text-align: left;
+}
